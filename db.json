@@ -1,0 +1,22 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "fname": "John",
+      "lname": "Doe",
+      "email": "johndoe49@gmail.com",
+      "password": "123456",
+      "city": "New York",
+      "gender": "Male"
+    },
+    {
+      "fname": "Aashay",
+      "lname": "Thakur",
+      "email": "thakur.aashay@gmail.com",
+      "password": "asd",
+      "city": "Thane",
+      "gender": "Male",
+      "id": 2
+    }
+  ]
+}

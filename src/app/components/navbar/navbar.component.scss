@@ -1,0 +1,25 @@
+nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-image: linear-gradient(90deg, #00b4db, #0083b0);
+  button {
+    color: white;
+    padding: 0 20px;
+    outline: none;
+    border: none;
+    background: none;
+    height: 100%;
+    cursor: pointer;
+    font-size: 16px;
+    &:hover {
+      background: #71c3df;
+      // color: black;
+    }
+  }
+}

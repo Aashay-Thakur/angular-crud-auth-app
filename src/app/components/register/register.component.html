@@ -1,0 +1,105 @@
+<div class="container">
+  <div class="form">
+    <form (ngSubmit)="onSubmit()">
+      <h3>Register</h3>
+      <div class="form-group">
+        <input
+          type="email"
+          class="form-control"
+          id="email"
+          name="email"
+          [(ngModel)]="email"
+          placeholder=" "
+        />
+        <label for="username">Email</label>
+      </div>
+      <div class="form-divide">
+        <div class="form-group">
+          <input
+            type="text"
+            class="form-control"
+            id="fname"
+            name="fname"
+            [(ngModel)]="fname"
+            placeholder=" "
+          />
+          <label for="fname">First Name</label>
+        </div>
+        <div class="form-group">
+          <input
+            type="text"
+            class="form-control"
+            id="lname"
+            name="lname"
+            [(ngModel)]="lname"
+            placeholder=" "
+          />
+          <label for="lname">Last Name</label>
+        </div>
+      </div>
+      <div class="form-group">
+        <select name="city" id="city" name="city" [(ngModel)]="city">
+          <option [value]="'Thane'" style="text-align: center" disabled>
+            Select City
+          </option>
+          <option value="Thane">Thane City</option>
+        </select>
+        <label for="city">Select City</label>
+      </div>
+      <div class="form-group radio-group">
+        <label for="gender">Gender</label>
+        <div class="radio">
+          <input
+            type="radio"
+            name="gender"
+            (change)="onGenderChange('Male')"
+            id="male"
+          />
+          <label for="male">Male</label>
+        </div>
+        <div class="radio">
+          <input
+            type="radio"
+            name="gender"
+            (change)="onGenderChange('Female')"
+            id="female"
+          />
+          <label for="female">Female</label>
+        </div>
+      </div>
+      <div class="password">
+        <div class="form-group">
+          <input
+            type="password"
+            class="form-control"
+            id="password"
+            name="password"
+            [(ngModel)]="password"
+            placeholder=" "
+          />
+          <label for="password">Password</label>
+        </div>
+        <div class="form-group">
+          <input
+            type="password"
+            class="form-control"
+            id="confirmPassword"
+            name="confirmPassword"
+            [(ngModel)]="confirmPassword"
+            placeholder=" "
+          />
+          <label for="confirm-password">Confirm Password</label>
+        </div>
+        <label
+          *ngIf="password !== confirmPassword"
+          for="confirm-password"
+          [ngStyle]="{ color: 'red' }"
+        >
+          Passwords do not match
+        </label>
+      </div>
+      <div class="form-group"><input type="submit" value="Register" /></div>
+    </form>
+    <p>Already Have an Account? <a routerLink="/login">Login Here</a></p>
+  </div>
+</div>

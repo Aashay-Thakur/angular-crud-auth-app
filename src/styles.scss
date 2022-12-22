@@ -1,0 +1,119 @@
+/* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: linear-gradient(to right, white, #eee);
+}
+
+.form {
+  padding: 30px;
+  border-radius: 5px;
+  background-image: linear-gradient(to right, #00b4db, #0083b0);
+  width: 100%;
+  box-shadow: -5px 5px 0 #ccc;
+}
+
+.form-group:not(.radio-group) {
+  padding: 15px 5px;
+  position: relative;
+  input:not([type="radio"]),
+  select {
+    outline: none;
+    border: none;
+    border-radius: 0;
+    border-bottom: 1px solid #fff;
+    width: 100%;
+    height: 40px;
+    background-color: #0000;
+    color: white;
+
+    &:focus {
+      border-bottom: 2px solid #fff;
+    }
+    &:focus + label,
+    &:not(:placeholder-shown) + label {
+      translate: 0 -25px;
+      color: #9cedff;
+    }
+  }
+  label {
+    font-size: 14px;
+    position: absolute;
+    left: 10px;
+    bottom: 20px;
+    transition: translate 0.2s ease;
+    pointer-events: none;
+    color: white;
+  }
+}
+
+.form-divide {
+  display: flex;
+  justify-content: space-between;
+}
+
+h3 {
+  color: white;
+}
+
+select > option {
+  outline: none;
+  border: none;
+  border-radius: 0px;
+  color: black;
+}
+
+.radio-group {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 5px;
+  position: relative;
+  input[type="radio"] {
+    outline: none;
+    border: none;
+    border-radius: 0;
+    border-bottom: 1px solid #fff;
+    height: 15px;
+    background-color: #0000;
+    color: white;
+  }
+  .checkbox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+  label {
+    color: white;
+  }
+}
+
+input[type="submit"] {
+  border: 1px solid white !important;
+  cursor: pointer;
+  transition: all 0.3s linear;
+  font-size: 16px;
+  margin-top: 15px;
+
+  &:hover {
+    background-color: white !important;
+    color: #0083b0 !important;
+  }
+}
+
+p,
+a {
+  color: white;
+  padding: 10px;
+}

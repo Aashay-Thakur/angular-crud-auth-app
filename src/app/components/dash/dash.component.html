@@ -1,0 +1,64 @@
+<app-navbar
+  (triggerProfile)="onDropdownClick()"
+  (triggerLogout)="onLogout()"
+></app-navbar>
+<div class="profile-container" #dropdown>
+  <span>{{ userData.fname + " " + userData.lname }}</span>
+  <span>{{ userData.email }}</span>
+  <span>{{ userData.city }}</span>
+  <span>{{ userData.gender }}</span>
+</div>
+
+<div
+  class="hover-container"
+  [style]="shouldShowOverlay ? 'pointer-events: auto' : 'pointer-events: none'"
+>
+  <div
+    [style.visibility]="shouldShowOverlay ? 'visible' : 'hidden'"
+    class="overlay-container"
+  >
+    <fa-icon
+      class="close-icon"
+      (click)="shouldShowOverlay = false"
+      [icon]="faXmark"
+    ></fa-icon>
+    <app-overlay-form [isEdit]="isEdit"></app-overlay-form>
+  </div>
+</div>
+
+<table>
+  <tr>
+    <th>Id</th>
+    <th>First Name</th>
+    <th>Last Name</th>
+    <th>Email Address</th>
+    <th>City</th>
+    <th>Gender</th>
+    <th>Edit</th>
+  </tr>
+  <tr *ngFor="let user of allUserData">
+    <td>{{ user.id }}</td>
+    <td>{{ user.fname }}</td>
+    <td>{{ user.lname }}</td>
+    <td>{{ user.email }}</td>
+    <td>{{ user.city }}</td>
+    <td>{{ user.gender }}</td>
+    <td class="edit" id="{{ user.id }}">
+      <fa-icon
+        class="delete-icon icon"
+        (click)="onDelete(user.id!, user.fname!, user.lname!)"
+        [icon]="faTrash"
+      ></fa-icon>
+      <fa-icon
+        class="edit-icon icon"
+        (click)="onEdit(user.id!, user)"
+        [icon]="faPen"
+      ></fa-icon>
+    </td>
+  </tr>
+  <tr class="add-row" (click)="onAdd()">
+    <td colspan="7">
+      <fa-icon class="edit-icon" [icon]="faCirclePlus"></fa-icon>
+    </td>
+  </tr>
+</table>
